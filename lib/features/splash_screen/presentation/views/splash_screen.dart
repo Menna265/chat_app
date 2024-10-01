@@ -1,12 +1,56 @@
-// import 'package:flutter/cupertino.dart';
-//
-// class SplashScreen extends StatelessWidget {
-//   const SplashScreen({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Image.asset(),
-//     );
-//   }
-// }
+import 'dart:async';
+
+import 'package:chat/core/constants/asset_images.dart';
+import 'package:chat/core/themes/styles.dart';
+import 'package:chat/features/home/presentation/views/home_screen.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../core/themes/colors.dart';
+
+class SplashScreen extends StatefulWidget {
+  static const String routeName = "splash-screen";
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  void initState() {
+    Timer(Duration(seconds: 4), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: ColorApp.white,
+      child: Column(
+        children: [
+          SizedBox(
+            height: 35,
+          ),
+          Row(
+            children: [
+              Image.asset(AssetImages.logo),
+            ],
+          ),
+          Text(
+            "WhatsUp",
+            style: StyleApp.textStyle15
+                .copyWith(fontSize: 50, decoration: TextDecoration.none),
+          ),
+          SizedBox(
+            height: 150,
+          ),
+          Text(
+            "The best chat app of this century",
+            style:
+                StyleApp.textStyle24.copyWith(decoration: TextDecoration.none),
+          ),
+        ],
+      ),
+    );
+  }
+}
