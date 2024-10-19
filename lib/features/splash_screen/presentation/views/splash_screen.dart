@@ -5,8 +5,6 @@ import 'package:chat/core/themes/styles.dart';
 import 'package:chat/features/home/presentation/views/home_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/themes/colors.dart';
-
 class SplashScreen extends StatefulWidget {
   static const String routeName = "splash-screen";
 
@@ -24,9 +22,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: ColorApp.white,
-      child: Column(
+    return Scaffold(
+      body: Column(
         children: [
           SizedBox(
             height: 35,
