@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:chat/core/constants/asset_images.dart';
+import 'package:chat/core/themes/colors.dart';
 import 'package:chat/core/themes/styles.dart';
 import 'package:chat/features/home/presentation/views/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorApp.basic,
       body: Column(
         children: [
           SizedBox(
@@ -44,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Text(
             "The best chat app of this century",
             style:
-                StyleApp.textStyle24.copyWith(decoration: TextDecoration.none),
+            StyleApp.textStyle24.copyWith(decoration: TextDecoration.none),
           ),
         ],
       ),
