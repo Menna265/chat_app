@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:chat/core/constants/asset_images.dart';
+import 'package:chat/core/themes/colors.dart';
 import 'package:chat/core/themes/styles.dart';
-import 'package:chat/features/home/presentation/views/home_screen.dart';
+import 'package:chat/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,13 +17,14 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 4), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          context, MaterialPageRoute(builder: (context) => LoginView()));
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorApp.basic,
       body: Column(
         children: [
           SizedBox(
@@ -39,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 .copyWith(fontSize: 50, decoration: TextDecoration.none),
           ),
           SizedBox(
-            height: 150,
+            height: 100,
           ),
           Text(
             "The best chat app of this century",
