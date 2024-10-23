@@ -25,6 +25,8 @@ Widget defaultText({
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
+        errorBorder:
+            OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
         prefixIcon: Icon(prefix),
         suffixIcon: suffix != null
             ? IconButton(
