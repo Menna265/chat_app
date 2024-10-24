@@ -1,4 +1,5 @@
 import 'package:chat/features/auth/presentation/views/login_view.dart';
+import 'package:chat/features/call/presentation/views/call_view.dart';
 import 'package:chat/features/chat/presentation/views/chat_view.dart';
 import 'package:chat/features/home/presentation/views/home_screen.dart';
 import 'package:chat/features/splash_screen/presentation/views/splash_screen.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         SignupView.routeName: (context) => SignupView(),
         ChatView.routeName: (context) => ChatView(),
         StatusView.routeName: (context) => StatusView(),
+        CallView.routeName: (context) => CallView(),
       },
     );
   }
