@@ -1,4 +1,7 @@
+import 'package:chat/features/home/presentation/views/widgets/home_body.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/themes/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "home-screen";
@@ -6,7 +9,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyanAccent,
+      backgroundColor: ColorApp.basic,
+      body: HomeBody(),
     );
   }
 }
