@@ -1,3 +1,4 @@
+import 'package:chat/features/chat/presentation/views/chat_view.dart';
 import 'package:chat/features/home/presentation/views/widgets/appbar_widget.dart';
 import 'package:chat/features/home/presentation/views/widgets/bottomBar_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,17 +14,13 @@ class HomeBody extends StatefulWidget {
 
 class _HomeBodyState extends State<HomeBody> {
   int index = 0;
+  final pages = [
+    ChatView(),
+  ];
 
-  // final pages=[
-  //   LoginView(),
-  //   SignupView(),
-  //   HomeScreen(),
-  //
-  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: ColorApp.basic,
         appBar: AppBarWidget(),
         bottomNavigationBar: BottomBarWidget(
           currentIndex: index,
@@ -32,8 +29,7 @@ class _HomeBodyState extends State<HomeBody> {
             setState(() {});
           },
         ),
-        // body: ListviewWidget(),
-        //   body: pages[index],
+        body: pages[index],
         floatingActionButton: FloatingActionButton(
           backgroundColor: ColorApp.primaryColor,
           onPressed: () {},

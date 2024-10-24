@@ -1,4 +1,5 @@
 import 'package:chat/features/auth/presentation/views/login_view.dart';
+import 'package:chat/features/chat/presentation/views/chat_view.dart';
 import 'package:chat/features/home/presentation/views/home_screen.dart';
 import 'package:chat/features/splash_screen/presentation/views/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         SplashScreen.routeName: (context) => SplashScreen(),
         LoginView.routeName: (context) => LoginView(),
         SignupView.routeName: (context) => SignupView(),
+        ChatView.routeName: (context) => ChatView(),
       },
     );
   }
