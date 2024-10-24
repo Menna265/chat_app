@@ -1,3 +1,4 @@
+import 'package:chat/features/call/presentation/views/call_view.dart';
 import 'package:chat/features/chat/presentation/views/chat_view.dart';
 import 'package:chat/features/home/presentation/views/widgets/appbar_widget.dart';
 import 'package:chat/features/home/presentation/views/widgets/bottomBar_widget.dart';
@@ -18,6 +19,7 @@ class _HomeBodyState extends State<HomeBody> {
   final pages = [
     ChatView(),
     StatusView(),
+    CallView(),
   ];
 
   @override
