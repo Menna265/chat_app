@@ -1,7 +1,7 @@
 import 'package:chat/features/auth/presentation/views/login_view.dart';
 import 'package:chat/features/call/presentation/views/call_view.dart';
 import 'package:chat/features/chat/presentation/views/chat_view.dart';
-import 'package:chat/features/home/presentation/views/home_screen.dart';
+import 'package:chat/features/home/presentation/views/home_view.dart';
 import 'package:chat/features/profile/presentation/views/new_group_view.dart';
 import 'package:chat/features/profile/presentation/views/profile_view.dart';
 import 'package:chat/features/profile/presentation/views/setting_view.dart';
@@ -24,9 +24,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.interTextTheme(),
       ),
-      initialRoute: HomeScreen.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: {
-        HomeScreen.routeName: (context) => HomeScreen(),
+        HomeView.routeName: (context) => HomeView(),
         SplashScreen.routeName: (context) => SplashScreen(),
         LoginView.routeName: (context) => LoginView(),
         SignupView.routeName: (context) => SignupView(),
