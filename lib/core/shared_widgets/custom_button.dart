@@ -16,6 +16,8 @@ class CustomButton extends StatelessWidget {
     required this.func,
     this.isLoading = false,
     this.svgPicture,
+    this.prefix,
+    this.color,
   });
 
   final double? width;
@@ -28,6 +30,8 @@ class CustomButton extends StatelessWidget {
   final VoidCallback func;
   final bool isLoading;
   final Widget? svgPicture;
+  final IconData? prefix;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +50,18 @@ class CustomButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Icon(
+                  prefix,
+                  color: Colors.white,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
                 Center(
                   child: isLoading
                       ? CircularProgressIndicator()
-                      : Text(text!, style: StyleApp.textStyle24),
+                      : Text(text!,
+                          style: StyleApp.textStyle24.copyWith(color: color)),
                 ),
                 SizedBox(width: 15),
                 if (svgPicture != null) ...{

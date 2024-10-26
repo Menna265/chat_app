@@ -29,55 +29,58 @@ class _SignupBodyState extends State<SignupBody> {
     return SingleChildScrollView(
       child: Form(
         key: formKey,
-        child: Column(
-          children: [
-            LogoWidget(),
-            LoginTitle(
-              text: 'Register To New Account',
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            NameField(
-              nameController: nameController,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            EmailWidget(emailController: emailController),
-            SizedBox(
-              height: 5,
-            ),
-            PhoneField(
-              phoneController: phoneController,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            PasswordWidget(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              LogoWidget(),
+              LoginTitle(
+                text: 'Register To New Account',
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              NameField(
+                nameController: nameController,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              EmailWidget(emailController: emailController),
+              SizedBox(
+                height: 5,
+              ),
+              PhoneField(
+                phoneController: phoneController,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              PasswordWidget(
+                  passwordController: passwordController,
+                  isPasswordVisibility: isPasswordVisible,
+                  text: "Password is too short",
+                  toogleVisibility: () {
+                    setState(() {
+                      isPasswordVisible = !isPasswordVisible;
+                    });
+                  }),
+              SizedBox(
+                height: 20,
+              ),
+              SignupButton(
+                nameController: nameController,
+                emailController: emailController,
+                phoneController: phoneController,
                 passwordController: passwordController,
-                isPasswordVisibility: isPasswordVisible,
-                text: "Password is too short",
-                toogleVisibility: () {
-                  setState(() {
-                    isPasswordVisible = !isPasswordVisible;
-                  });
-                }),
-            SizedBox(
-              height: 20,
-            ),
-            SignupButton(
-              nameController: nameController,
-              emailController: emailController,
-              phoneController: phoneController,
-              passwordController: passwordController,
-              onSuccess: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
-            ),
-            LoginRow(),
-          ],
+                onSuccess: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
+              ),
+              LoginRow(),
+            ],
+          ),
         ),
       ),
     );

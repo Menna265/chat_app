@@ -2,6 +2,9 @@ import 'package:chat/features/auth/presentation/views/login_view.dart';
 import 'package:chat/features/call/presentation/views/call_view.dart';
 import 'package:chat/features/chat/presentation/views/chat_view.dart';
 import 'package:chat/features/home/presentation/views/home_screen.dart';
+import 'package:chat/features/profile/presentation/views/new_group_view.dart';
+import 'package:chat/features/profile/presentation/views/profile_view.dart';
+import 'package:chat/features/profile/presentation/views/setting_view.dart';
 import 'package:chat/features/splash_screen/presentation/views/splash_screen.dart';
 import 'package:chat/features/status/presentation/views/status_view.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.interTextTheme(),
       ),
-      initialRoute: SplashScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         SplashScreen.routeName: (context) => SplashScreen(),
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
         ChatView.routeName: (context) => ChatView(),
         StatusView.routeName: (context) => StatusView(),
         CallView.routeName: (context) => CallView(),
+        ProfileView.routeName: (context) => ProfileView(),
+        NewGroupView.routeName: (context) => NewGroupView(),
+        SettingView.routeName: (context) => SettingView(),
       },
     );
   }

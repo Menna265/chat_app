@@ -10,6 +10,7 @@ class ChatBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: 3,
+        shrinkWrap: true,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
