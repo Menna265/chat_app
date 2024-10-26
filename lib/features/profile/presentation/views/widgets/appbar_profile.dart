@@ -1,5 +1,5 @@
 import 'package:chat/core/themes/styles.dart';
-import 'package:chat/features/home/presentation/views/home_screen.dart';
+import 'package:chat/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/themes/colors.dart';
@@ -18,7 +18,7 @@ class AppBarProfile extends StatelessWidget implements PreferredSizeWidget {
       leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                context, MaterialPageRoute(builder: (context) => HomeView()));
           },
           icon: Icon(
             Icons.arrow_back,

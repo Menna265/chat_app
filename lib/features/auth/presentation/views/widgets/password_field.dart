@@ -1,13 +1,13 @@
 import 'package:chat/core/shared_widgets/default_text.dart';
 import 'package:flutter/material.dart';
 
-class PasswordWidget extends StatelessWidget {
+class PasswordField extends StatelessWidget {
   final TextEditingController passwordController;
   final bool isPasswordVisibility;
   final VoidCallback toogleVisibility;
   final String text;
 
-  const PasswordWidget(
+  const PasswordField(
       {super.key,
       required this.passwordController,
       required this.isPasswordVisibility,

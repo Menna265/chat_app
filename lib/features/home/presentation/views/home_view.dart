@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/themes/colors.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeView extends StatelessWidget {
   static String routeName = "home-screen";
 
   @override

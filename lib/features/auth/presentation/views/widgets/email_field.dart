@@ -1,10 +1,10 @@
 import 'package:chat/core/shared_widgets/default_text.dart';
 import 'package:flutter/material.dart';
 
-class EmailWidget extends StatelessWidget {
+class EmailField extends StatelessWidget {
   final TextEditingController emailController;
 
-  const EmailWidget({super.key, required this.emailController});
+  const EmailField({super.key, required this.emailController});
 
   @override
   Widget build(BuildContext context) {

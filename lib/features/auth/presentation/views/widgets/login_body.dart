@@ -1,10 +1,10 @@
 import 'package:chat/features/auth/presentation/views/login_title.dart';
-import 'package:chat/features/auth/presentation/views/widgets/email_widget.dart';
+import 'package:chat/features/auth/presentation/views/widgets/email_field.dart';
 import 'package:chat/features/auth/presentation/views/widgets/login_button.dart';
 import 'package:chat/features/auth/presentation/views/widgets/logo_widget.dart';
-import 'package:chat/features/auth/presentation/views/widgets/password_widget.dart';
+import 'package:chat/features/auth/presentation/views/widgets/password_field.dart';
 import 'package:chat/features/auth/presentation/views/widgets/register_row.dart';
-import 'package:chat/features/home/presentation/views/home_screen.dart';
+import 'package:chat/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginBody extends StatefulWidget {
@@ -39,11 +39,11 @@ class _LoginBodyState extends State<LoginBody> {
               SizedBox(
                 height: 25,
               ),
-              EmailWidget(emailController: emailController),
+              EmailField(emailController: emailController),
               SizedBox(
                 height: 25,
               ),
-              PasswordWidget(
+              PasswordField(
                 passwordController: passwordController,
                 isPasswordVisibility: isPasswordVisible,
                 text: "Password Shouldn`t be empty",
@@ -61,7 +61,7 @@ class _LoginBodyState extends State<LoginBody> {
                 passwordController: passwordController,
                 onSuccess: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                      MaterialPageRoute(builder: (context) => HomeView()));
                 },
               ),
               SizedBox(

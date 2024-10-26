@@ -1,12 +1,12 @@
 import 'package:chat/features/auth/presentation/views/login_title.dart';
-import 'package:chat/features/auth/presentation/views/widgets/email_widget.dart';
+import 'package:chat/features/auth/presentation/views/widgets/email_field.dart';
 import 'package:chat/features/auth/presentation/views/widgets/login_row.dart';
 import 'package:chat/features/auth/presentation/views/widgets/logo_widget.dart';
 import 'package:chat/features/auth/presentation/views/widgets/name_field.dart';
-import 'package:chat/features/auth/presentation/views/widgets/password_widget.dart';
+import 'package:chat/features/auth/presentation/views/widgets/password_field.dart';
 import 'package:chat/features/auth/presentation/views/widgets/phone_field.dart';
 import 'package:chat/features/auth/presentation/views/widgets/signup_button.dart';
-import 'package:chat/features/home/presentation/views/home_screen.dart';
+import 'package:chat/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 class SignupBody extends StatefulWidget {
@@ -46,7 +46,7 @@ class _SignupBodyState extends State<SignupBody> {
               SizedBox(
                 height: 5,
               ),
-              EmailWidget(emailController: emailController),
+              EmailField(emailController: emailController),
               SizedBox(
                 height: 5,
               ),
@@ -56,7 +56,7 @@ class _SignupBodyState extends State<SignupBody> {
               SizedBox(
                 height: 5,
               ),
-              PasswordWidget(
+              PasswordField(
                   passwordController: passwordController,
                   isPasswordVisibility: isPasswordVisible,
                   text: "Password is too short",
@@ -75,7 +75,7 @@ class _SignupBodyState extends State<SignupBody> {
                 passwordController: passwordController,
                 onSuccess: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                      MaterialPageRoute(builder: (context) => HomeView()));
                 },
               ),
               LoginRow(),

@@ -33,6 +33,12 @@ Widget defaultText({
                 icon: Icon(suffix),
               )
             : null,
+        // errorBorder: OutlineInputBorder(
+        //  borderSide: BorderSide(color: Colors.red)
+        // ),
+        // focusedErrorBorder: OutlineInputBorder(
+        //   borderSide: BorderSide(color: Colors.redAccent, width: 2.0),
+        // ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(25),
         ),
