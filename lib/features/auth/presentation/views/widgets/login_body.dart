@@ -28,45 +28,48 @@ class _LoginBodyState extends State<LoginBody> {
     return Form(
       key: formKey,
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            LogoWidget(),
-            LoginTitle(
-              text: 'Log in to your account',
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            EmailWidget(emailController: emailController),
-            SizedBox(
-              height: 25,
-            ),
-            PasswordWidget(
-              passwordController: passwordController,
-              isPasswordVisibility: isPasswordVisible,
-              text: "Password Shouldn`t be empty",
-              toogleVisibility: () {
-                setState(() {
-                  isPasswordVisible = !isPasswordVisible;
-                });
-              },
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            LoginButton(
-              emailController: emailController,
-              passwordController: passwordController,
-              onSuccess: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            RegisterRow(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              LogoWidget(),
+              LoginTitle(
+                text: 'Log in to your account',
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              EmailWidget(emailController: emailController),
+              SizedBox(
+                height: 25,
+              ),
+              PasswordWidget(
+                passwordController: passwordController,
+                isPasswordVisibility: isPasswordVisible,
+                text: "Password Shouldn`t be empty",
+                toogleVisibility: () {
+                  setState(() {
+                    isPasswordVisible = !isPasswordVisible;
+                  });
+                },
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              LoginButton(
+                emailController: emailController,
+                passwordController: passwordController,
+                onSuccess: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              RegisterRow(),
+            ],
+          ),
         ),
       ),
     );

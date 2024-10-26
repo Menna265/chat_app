@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import '../../../../../core/themes/colors.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarWidget({super.key});
+  final ValueChanged<int> onSelected;
+
+  AppBarWidget({super.key, required this.onSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,21 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         SizedBox(
           width: 15,
         ),
-        Icon(Icons.more_vert),
+        PopupMenuButton(
+            color: ColorApp.basic,
+            itemBuilder: (context) => [
+                  PopupMenuItem(
+                    value: 1,
+                    child: Text("Profile"),
+                  ),
+                  PopupMenuItem(
+                    value: 2,
+                    child: Text("New Group"),
+                  ),
+                  PopupMenuItem(value: 3, child: Text("Setting")),
+                ],
+            onSelected: onSelected,
+            child: Icon(Icons.more_vert)),
         SizedBox(
           width: 15,
         ),

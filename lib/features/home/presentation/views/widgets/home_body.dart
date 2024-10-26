@@ -2,6 +2,9 @@ import 'package:chat/features/call/presentation/views/call_view.dart';
 import 'package:chat/features/chat/presentation/views/chat_view.dart';
 import 'package:chat/features/home/presentation/views/widgets/appbar_widget.dart';
 import 'package:chat/features/home/presentation/views/widgets/bottomBar_widget.dart';
+import 'package:chat/features/profile/presentation/views/new_group_view.dart';
+import 'package:chat/features/profile/presentation/views/profile_view.dart';
+import 'package:chat/features/profile/presentation/views/widgets/setting_body.dart';
 import 'package:chat/features/status/presentation/views/status_view.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +28,22 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarWidget(),
+        appBar: AppBarWidget(
+          onSelected: (int value) {
+            setState(() {
+              if (value == 1) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfileView()));
+              } else if (value == 2) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NewGroupView()));
+              } else if (value == 3) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingBody()));
+              }
+            });
+          },
+        ),
         bottomNavigationBar: BottomBarWidget(
           currentIndex: index,
           onTap: (int value) {

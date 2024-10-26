@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../themes/colors.dart';
+
 Widget defaultText({
   TextEditingController? controller,
-  // TextInputType type,
   FormFieldValidator? validate,
   IconData? prefix,
   Function()? pressed,
-  Function()? tap,
-  Function(String)? onChange,
+  // Function()? tap,
+  // Function(String)? onChange,
   bool isObscure = false,
   IconData? suffix,
   String? label,
@@ -19,14 +20,12 @@ Widget defaultText({
       controller: controller,
       obscureText: isObscure,
       keyboardType: keyboardType,
-      onChanged: onChange,
+      // onChanged: onChange,
       validator: validate,
       enabled: enable,
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
-        errorBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
         prefixIcon: Icon(prefix),
         suffixIcon: suffix != null
             ? IconButton(
@@ -34,5 +33,11 @@ Widget defaultText({
                 icon: Icon(suffix),
               )
             : null,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorApp.primaryColor, width: 3.0),
+        ),
       ),
     );
