@@ -35,6 +35,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                     child: Text("New Group"),
                   ),
                   PopupMenuItem(value: 3, child: Text("Setting")),
+                  PopupMenuItem(value: 4, child: Text("Log Out")),
                 ],
             onSelected: onSelected,
             child: Icon(Icons.more_vert)),
