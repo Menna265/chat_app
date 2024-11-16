@@ -24,7 +24,7 @@ class StatusBody extends StatelessWidget {
               style:
                   TextStyle(color: Colors.grey, fontWeight: FontWeight.bold)),
         ),
-        ViewedupdateWidget()
+        ViewedupdateWidget(),
       ],
     );
   }

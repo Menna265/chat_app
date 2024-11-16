@@ -21,10 +21,14 @@ class MystatusWidget extends StatelessWidget {
             Positioned(
                 bottom: 0,
                 right: 0,
-                child: Icon(
-                  Icons.add_circle_outline,
-                  color: ColorApp.primaryColor,
-                )),
+                left: 30,
+                top: 30,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.add_circle_outline,
+                      color: ColorApp.primaryColor,
+                    ))),
           ],
         ),
         title: Text(
