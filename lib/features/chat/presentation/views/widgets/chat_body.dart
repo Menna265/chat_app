@@ -1,6 +1,4 @@
-import 'package:chat/core/shared_widgets/custom_button.dart';
 import 'package:chat/core/themes/styles.dart';
-import 'package:chat/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/themes/colors.dart';
@@ -59,12 +57,6 @@ class ChatBody extends StatelessWidget {
         Spacer(),
         Padding(
           padding: const EdgeInsets.all(20.0),
-          child: CustomButton(
-              text: "Log Out",
-              func: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => LoginView()));
-              }),
         )
       ],
     );
